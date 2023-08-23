@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h2 style="text-align:center;">REGISTER HERE</h2>
+<form class="container w-50 text-center p-5 my-6 bg-info" action="" method="POST">
+    {% csrf_token %}
+    <div>
+    <input required="required" style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="text" name="username" placeholder="Enter your name"><br>
+    <input required="required"  style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="email" name="email" placeholder="Enter your email"><br>
+    <p style="margin-right:150px;margin-top:8px">Select your role:</p>
+    <input style="margin-right:8px" required="required" type="radio" id="student" name="role" value="STUDENT">
+        <label style="margin-right:100px;" for="student">Student</label><br>
+    <input style="margin-right:8px" required="required"  type="radio" id="staff" name="role" value="STAFF">
+        <label style="margin-right:125px" for="staff">Staff</label><br>
+    <input style="margin-right:8px" required="required" type="radio" id="admin" name="role" value="ADMIN">
+        <label style="margin-right:110px" for="admin">Admin</label><br>
+    <input style="margin-right:8px" required="required" type="radio" id="editor" name="role" value="EDITOR">
+        <label style="margin-right:113px" for="editor">Editor</label><br>
+    <input required="required"  style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="number" name="number" placeholder="Enter your contact number"><br>
+    <input required="required"  style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="text" name="text" placeholder="Enter your country"><br>
+    <input required="required"  style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="text" name="text" placeholder="Enter your nationality"><br>
+    <input required="required"  style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="password" name="password" placeholder="Enter your password"><br>
+    <input required="required" style="width:70%;margin-top: 8px;padding:8px;border-radius:0.5px;" type="password" name="password1" placeholder="Confirm your password"><br>
+    </div>
+    <input class="btn btn-primary mb-4" style="width:70%;margin-top:22px;padding:3px;" type="submit">
+</form>
+
+</body>
+</html>
+{% endblock %}
